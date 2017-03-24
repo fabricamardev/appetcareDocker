@@ -29,4 +29,4 @@ phpmyadmin:
   ports: 
    - "81:80"
   links:
-- db
+  - db
