@@ -26,9 +26,16 @@ git clone https://github.com/fabricamardev/appetcareDocker.git
 
 cd appetcareDocker
 
-3 - De dentro do diretorio appetcareDocker iniciar o container com o comando:
+3 - Rodar os comandos abaixo antes de iniciar o container:
+
+sudo chown -R :www-data appetcareDocker/
+sudo chmod -R 755 appetcareDocker/
+
+4 - De dentro do diretorio appetcareDocker iniciar o container com o comando:
 
 docker-compose up -d
+
+------------------------------------------------------------------------------
 
 Feito isso os serviços podem ser acessados nas seguintes portas:
 
