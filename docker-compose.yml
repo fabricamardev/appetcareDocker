@@ -1,0 +1,32 @@
+php:
+  build: .
+  ports:
+   - "80:80"
+   - "443:443"
+  volumes:
+   - ./www:/var/www/html
+  links:
+   - db
+
+db:
+  image: mysql:5.7
+  volumes: 
+   - ./mysql:/var/lib/mysql
+  environment:
+   - MYSQL_ROOT_PASSWORD=123Mudar
+   - MYSQL_DATABASE=petcare
+  ports:
+   - "3306:3306"
+
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  volumes:
+   - ./sessions:/sessions
+  container_name: phpmyadmin
+  environment: 
+   - PMA_HOST = db
+   - PMA_PORT = 3306
+  ports: 
+   - "81:80"
+  links:
+- db
