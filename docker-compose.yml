@@ -4,7 +4,7 @@ php:
    - "80:80"
    - "443:443"
   volumes:
-   - ./www:/var/www/html
+   - ./public/:/var/www/laravel/public/
   links:
    - db
 
